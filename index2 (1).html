@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+    </head>
+    <body>
+        <h1>JavaScript</h1>
+        <ul id="lista">
+            <li class="list">Primero Elemento</li>
+            <li class="list">Segundo Elemento</li>
+            <li class="list">Tercer Elemento</li>
+        </ul>
+        <input type="text" id="nombre">
+        <button id="boton" onclick="agregaElemento()">Agrega</button>
+
+
+        <script>
+            // comentario
+            
+            /*
+            comentario
+            de multiples lineas
+            */
+
+            // asignación de variables
+            var numero = 200;
+            var incremento = 20;
+            var suma = numero + incremento;
+            console.log(numero);
+            console.log(suma);
+
+            var nombre = "Julián";
+            var apellido = "Pérez";
+            var nombreCompleto = nombre + " " + apellido
+            console.log(nombreCompleto);
+            
+            var nombres = ["Luisa", "Marcela", "Juan", "Macarena", "Guido"]
+            console.log(nombres);
+
+            // demostración de condicionales
+            var a = 10;
+            var b = 40;
+
+            if (a > b) {
+                var resultado = a;
+            } 
+            else {
+                var resultado = b;
+            }
+            console.log("El número mayor es: " + resultado);
+            
+
+            // condicionales para categoría de edades
+            var edad = 40;
+
+            var edadAdolescente = 14;
+            var edadAdulto = 18;
+
+            if (edad <= edadAdolescente) {
+                var resultado = "Niño";
+            }
+            else if (edad > edadAdolescente && edad < edadAdulto) {
+                var resultado = "Adolescente";
+            }
+            else {
+                var resultado = "Adulto";
+            }
+
+            const enunciado = "La persona es un ";
+            console.log(enunciado + resultado);
+
+
+            var edadAdolescente = 14;
+            var edadAdulto = 18;
+
+            // edades con iteraciones
+            for (let edad = 1; edad <=60; edad = edad + 1) {
+
+                if (edad <= edadAdolescente) {
+                    var resultado = "Niño";
+                }
+                else if (edad > edadAdolescente && edad < edadAdulto) {
+                    var resultado = "Adolescente";
+                }
+                else {
+                    var resultado = "Adulto";
+                }
+                const enunciado = "La persona es un ";
+                console.log(enunciado + resultado);
+            }
+
+
+            // funciones (General)
+            function ganarDinero(precioCompra) {
+                
+                var precioVenta = precioCompra * 1.20;
+                return precioVenta;
+            }
+
+            var precioPublico = ganarDinero(20000);
+            console.log("Si el precio de compra es 20000, entonces");
+            console.log("El precio de venta es: " + precioPublico);
+
+            // funciones edades
+            function categorizaEdad(edad) {
+                if (edad <= edadAdolescente) {
+                    var resultado = "Niño";
+                }
+                else if (edad > edadAdolescente && edad < edadAdulto) {
+                    var resultado = "Adolescente";
+                }
+                else {
+                    var resultado = "Adulto";
+                }
+                return resultado;
+            }
+
+            for (let edad = 1; edad <=60; edad = edad + 1) {
+                resultado = categorizaEdad(edad);
+                const enunciado = "Usando Funcion. La persona es un ";
+                console.log(enunciado + resultado);
+            }
+
+            // Elimina li en ul
+            function eliminaItem(item) {
+                item.parentNode.removeChild(item);
+            }
+            // Agregar li en ul
+            function agregaElemento() {
+                let li = document.createElement("li");
+                li.setAttribute('onclick', 'eliminaItem(this);')
+                let casilla = document.getElementById("nombre");
+                let texto = casilla.value;
+                console.log(texto);
+                li.textContent = texto;
+                document.getElementById("lista").appendChild(li);
+                casilla.value = "";
+            }
+        </script>
+    </body>
+</html>
