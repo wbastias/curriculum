@@ -1,0 +1,27 @@
+<!Doctype html>
+<html lang=”es”>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejemplo</title>
+    </head>
+    <body>
+        <h1 id=“titulo">Awakelab!</h1>
+        <p>Párrafo1</p>
+        <p id="p2">Párrafo2</p>
+        <p>Párrafo3</p>
+        <button id="boton">Agrega</button>
+
+
+        <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+        <script>
+            console.log($("#p2").text());
+            $("h1").html("hola");
+            $("#boton").click(function(){
+                alert("Presionaste el botón");
+            });
+        </script>
+
+
+    </body>
+</html>
